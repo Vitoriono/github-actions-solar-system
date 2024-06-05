@@ -11,6 +11,7 @@ env:
   MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
   MONGO_USERNAME: ${{ vars.MONGO_USERNAME }}
   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
+  OWNER_LOWERCASE: vitoriono
 
 jobs:
     unit-testing:
@@ -89,4 +90,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/solar-system:${{ github.sha }}
+          tags: ghcr.io/${{ env.OWNER_LOWERCASE }}/solar-system:${{ github.sha }}
