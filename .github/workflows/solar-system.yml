@@ -71,8 +71,9 @@ jobs:
             retention-days: 5
 
     docker:
-      permissions: #added
-        packages: write #added
+      name: Containerization
+      permissions:
+        packages: write
       runs-on: ubuntu-latest
       needs:
         - code-coverage
